@@ -109,10 +109,20 @@ var lastnames = [
     "Wright"
 
 ];
-
-
-
-
+var images = [
+	"armistead.jpg",
+	"butler.jpg",
+	"capote.jpg",
+	"davis.jpg",
+	"faulkner.jpg",
+	"furness.jpg",
+	"jackson.jpg",
+	"longstreet.jpg",
+	"morgan.jpg",
+	"shoeless.jpg",
+	"swanson.jpg",
+	"frost.jpg"
+];
 function playerName() {
     var fname = firstnames[Math.floor(Math.random() * firstnames.length)];
     var lname = lastnames[Math.floor(Math.random() * lastnames.length)];
@@ -120,10 +130,18 @@ function playerName() {
     return fname + " " + lname;
 }
 
-
-
 function changePlayerName(){
 	var testString = playerName();
 	console.log(testString);
 	document.getElementById('yourPlayerName').innerHTML = testString;
+}
+
+function changeImage(){
+	var directory = "Images/";
+	var file = images[Math.floor(Math.random() * images.length)];
+	
+	var netFile = directory + file; 
+	console.log(netFile);
+	document.getElementById("playerimage").src= netFile;
+
 }
